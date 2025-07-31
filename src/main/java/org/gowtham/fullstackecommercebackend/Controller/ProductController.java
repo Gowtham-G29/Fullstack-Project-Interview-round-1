@@ -36,6 +36,7 @@ public class ProductController {
     public ResponseEntity<?> getProductById(@PathVariable Long id) throws Exception {
         Optional<Products> products=productService.getProductById(id);
 
+
         if(products.isPresent()){
             return ResponseEntity.status(HttpStatus.OK).body(products.get());
         }

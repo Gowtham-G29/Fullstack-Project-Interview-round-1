@@ -25,4 +25,9 @@ public class Products {
 //    @ManyToOne
 //    @JoinColumn(name = "distribution_center_id")
 //    private DistributionCenters distributionCenter;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Departments departments;
+
 }
