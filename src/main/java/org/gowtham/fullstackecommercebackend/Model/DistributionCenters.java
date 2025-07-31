@@ -1,8 +1,9 @@
 package org.gowtham.fullstackecommercebackend.Model;
 
 import jakarta.persistence.*;
-import lombok.*;
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -19,9 +20,9 @@ public class DistributionCenters {
     private String latitude;
     private String longitude;
 
-    @OneToMany(mappedBy = "distributionCenter", cascade = CascadeType.ALL)
-    private List<Products> products;
-
-    @OneToMany(mappedBy = "distributionCenter", cascade = CascadeType.ALL)
-    private List<InventoryItem> inventoryItems;
+//    @OneToMany(mappedBy = "distributionCenter", cascade = CascadeType.ALL)
+//    private List<Products> products;
+//
+//    @OneToMany(mappedBy = "distributionCenter", cascade = CascadeType.ALL)
+//    private List<InventoryItem> inventoryItems;
 }

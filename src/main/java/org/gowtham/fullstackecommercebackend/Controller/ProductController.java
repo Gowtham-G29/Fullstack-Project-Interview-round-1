@@ -19,7 +19,7 @@ public class ProductController {
     @Autowired
     private ProductServiceImpl productService;
 
-    @GetMapping("/products")
+    @GetMapping("/api/products")
     public ResponseEntity<?>getAllProducts() throws Exception {
         List<Products> allProducts=productService.getAllProducts();
         if(allProducts.isEmpty()){
@@ -32,7 +32,7 @@ public class ProductController {
 
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/api/products/{id}")
     public ResponseEntity<?> getProductById(@PathVariable Long id) throws Exception {
         Optional<Products> products=productService.getProductById(id);
 

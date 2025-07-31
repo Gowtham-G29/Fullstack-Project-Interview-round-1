@@ -23,19 +23,19 @@ public class OrderItems {
     private OffsetDateTime returnedAt;
     private BigDecimal salePrice;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Orders orderId;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private Users userId;
-
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Products productId;
-
-    @ManyToOne
-    @JoinColumn(name = "inventory_item_id")
-    private InventoryItem inventoryItemId;
+//    @ManyToOne
+//    @JoinColumn(name = "order_id", nullable = false)
+//    private Orders order;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private Users userId;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "product_id")
+//    private Products productId;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "inventory_item_id")
+//    private InventoryItem inventoryItem;
 }

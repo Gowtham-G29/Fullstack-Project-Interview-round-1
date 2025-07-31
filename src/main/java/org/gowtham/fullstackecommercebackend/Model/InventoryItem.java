@@ -27,11 +27,11 @@ public class InventoryItem {
     private String productDepartment;
     private String productSku;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Products product;
-
-    @ManyToOne
-    @JoinColumn(name = "distribution_center_id")
-    private DistributionCenters distributionCenter;
+//    @ManyToOne
+//    @JoinColumn(name = "product_id")
+//    private Products product;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "distribution_center_id")
+//    private DistributionCenters distributionCenter;
 }
