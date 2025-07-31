@@ -22,7 +22,7 @@ public class Products {
     private String department;
     private String sku;
 
-    @ManyToOne
-    @JoinColumn(name = "distribution_center_id")
-    private DistributionCenters distributionCenterId;
+//    @ManyToOne
+//    @JoinColumn(name = "distribution_center_id")
+//    private DistributionCenters distributionCenter;
 }
