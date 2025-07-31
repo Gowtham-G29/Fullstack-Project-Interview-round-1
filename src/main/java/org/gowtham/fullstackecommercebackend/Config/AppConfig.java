@@ -20,7 +20,9 @@ public class AppConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.sessionManagement(sessionManagement ->sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        http.authorizeHttpRequests(authorizedRequests->authorizedRequests.requestMatchers("/api/products","api/products/").permitAll().anyRequest().authenticated());
+        http.authorizeHttpRequests(authorizedRequests->authorizedRequests
+                .requestMatchers("/api/products","api/products/","/api/departments","api/departments/{id}","/api/departments/{id}/products")
+                .permitAll().anyRequest().authenticated());
 
         http.csrf(AbstractHttpConfigurer::disable);
         http.httpBasic(Customizer.withDefaults());

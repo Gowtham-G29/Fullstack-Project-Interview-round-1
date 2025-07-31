@@ -19,7 +19,7 @@ public class Products {
     private String name;
     private String brand;
     private String retailPrice;
-    private String department;
+//    private String department;
     private String sku;
 
 //    @ManyToOne
