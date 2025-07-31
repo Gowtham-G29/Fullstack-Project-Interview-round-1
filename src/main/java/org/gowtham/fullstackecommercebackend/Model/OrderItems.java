@@ -25,17 +25,17 @@ public class OrderItems {
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Orders order;
+    private Orders orderId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users user;
+    private Users userId;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Products product;
+    private Products productId;
 
     @ManyToOne
     @JoinColumn(name = "inventory_item_id")
-    private InventoryItem inventoryItem;
+    private InventoryItem inventoryItemId;
 }

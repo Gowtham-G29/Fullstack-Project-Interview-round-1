@@ -17,6 +17,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Long.parseLong;
+
 @Service
 public class CsvLoaderService {
 
@@ -115,7 +117,7 @@ public class CsvLoaderService {
 
             for (CSVRecord record : parser) {
                 Orders order = new Orders();
-                order.setUserId(Long.parseLong(record.get("user_id")));
+                order.setUserId(parseLong(record.get("user_id")));
                 order.setStatus(record.get("status"));
                 order.setGender(record.get("gender"));
                 order.setCreatedAt(parseDateTime(record.get("created_at")));
@@ -135,10 +137,10 @@ public class CsvLoaderService {
 
             for (CSVRecord record : parser) {
                 OrderItems item = new OrderItems();
-                item.setOrderId(Long.parseLong(record.get("order_id")));
-                item.setUserId(Long.parseLong(record.get("user_id")));
-                item.setProductId(Long.parseLong(record.get("product_id")));
-                item.setInventoryItemId(Long.parseLong(record.get("inventory_item_id")));
+                item.setOrderId(parseLong(record.get("order_id")));
+                item.setUserId(parseLong(record.get("user_id")));
+                item.setProductId(parseLong(record.get("product_id")));
+                item.setInventoryItemId(parseLong(record.get("inventory_item_id")));
                 item.setStatus(record.get("status"));
                 item.setCreatedAt(parseDateTime(record.get("created_at")));
                 item.setShippedAt(parseDateTime(record.get("shipped_at")));
@@ -158,7 +160,7 @@ public class CsvLoaderService {
 
             for (CSVRecord record : parser) {
                 InventoryItem item = new InventoryItem();
-                item.setProductId(Long.parseLong(record.get("product_id")));
+                item.setId(parseLong(record.get("product_id")));
                 item.setCreatedAt(parseDateTime(record.get("created_at")));
                 item.setSoldAt(parseDateTime(record.get("sold_at")));
                 item.setCost(new BigDecimal(record.get("cost")));
@@ -168,7 +170,7 @@ public class CsvLoaderService {
                 item.setProductRetailPrice(new BigDecimal(record.get("product_retail_price")));
                 item.setProductDepartment(record.get("product_department"));
                 item.setProductSku(record.get("product_sku"));
-                item.setProductDistributionCenterId(Integer.parseInt(record.get("product_distribution_center_id")));
+                item.setDistributionCenter(record.get("product_distribution_center_id"));
                 items.add(item);
             }
             inventoryItemRepo.saveAll(items);

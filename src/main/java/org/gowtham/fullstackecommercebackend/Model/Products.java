@@ -24,5 +24,5 @@ public class Products {
 
     @ManyToOne
     @JoinColumn(name = "distribution_center_id")
-    private DistributionCenters distributionCenter;
+    private DistributionCenters distributionCenterId;
 }
